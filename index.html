@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+     
+      .magin {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      .d-flex {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .custom-card {
+        width: 18rem;
+        margin-bottom: 20px;
+      }
+
+      .full-screen-img {
+        width: 100%;
+        height: auto;
+      }
+
+      .navbar {
+        background-color: #007bff; 
+      }
+
+      .navbar-brand,
+      .navbar-nav .nav-link,
+      .btn-outline-success {
+        color: white; 
+      }
+
+      .btn-outline-success {
+        border-color: white;
+      }
+
+      .btn-outline-success:hover {
+        background-color: white;
+        color: #4d5d6e;
+      }
+    </style>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand">CSMJU</a>
+        <form class="btn-outline-success:hover" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="d-flex magin" id="card-container">
+      <!-- การ์ดทั้งหมดจะถูกสร้างและเพิ่มในส่วนนี้ -->
+    </div>
+
+    <script>
+      // จัดการสร้างการ์ดทั้งหมด 30 ใบ
+      const cardContainer = document.getElementById("card-container");
+
+      for (let i = 1; i <= 30; i++) {
+        // สร้าง element การ์ด
+        const card = document.createElement("div");
+        card.className = "card custom-card";
+
+        // สร้างเนื้อหาภายในการ์ด
+        card.innerHTML = `
+                <div class="card-body">
+                    <h5 class="card-title">รุ่นที่ ${i}</h5>
+                    <p class="card-text">นักศึกษาคณะวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์</p>
+                    <a href="second page.html" class="btn btn-primary">ดูรายชื่อ</a>
+                </div>
+            `;
+
+        // เพิ่มการ์ดไปยัง container
+        cardContainer.appendChild(card);
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
